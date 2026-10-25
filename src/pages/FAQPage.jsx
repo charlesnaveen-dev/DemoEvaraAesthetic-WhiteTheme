@@ -20,15 +20,15 @@ export default function FAQPage() {
         faqs={FAQS}
       />
 
-      <section className="pt-36 sm:pt-40 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FAF9FC] border-b border-[#E6E2ED]">
+      <section className="pt-36 sm:pt-40 pb-20 px-4 sm:px-6 lg:px-8 bg-[#EEF4F0] border-b border-[#DCE5DF]">
         <div className="max-w-4xl mx-auto space-y-4">
-          <span className="text-[10px] uppercase tracking-[0.28em] text-[#3B1457] font-semibold block">
+          <span className="text-[11px] uppercase tracking-[0.28em] text-[#4E4B54] font-medium block">
             PATIENT INFORMATION
           </span>
-          <h1 className="font-serif-luxury text-5xl sm:text-7xl text-[#14101A] font-normal leading-tight">
+          <h1 className="font-serif-luxury text-5xl sm:text-7xl text-[#16141A] font-normal leading-tight">
             Frequently Asked Questions.
           </h1>
-          <p className="text-base sm:text-lg text-[#5B5566] font-light leading-relaxed pt-2">
+          <p className="text-base sm:text-lg text-[#4E4B54] font-light leading-relaxed pt-2">
             Transparent answers to help you feel informed and confident before scheduling your consultation at Evara Aesthetics in Tatabad, Coimbatore.
           </p>
         </div>

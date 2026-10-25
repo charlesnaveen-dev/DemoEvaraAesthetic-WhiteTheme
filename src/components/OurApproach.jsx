@@ -23,18 +23,18 @@ export default function OurApproach() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F9F9F8] border-b border-[#E8E6EB]">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#EEF4F0] border-b border-[#DCE5DF]">
       <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Header */}
         <div className="max-w-3xl space-y-3">
-          <p className="text-[11px] uppercase tracking-[0.28em] text-[#84808C] font-medium">
+          <p className="text-[11px] uppercase tracking-[0.28em] text-[#4E4B54] font-medium">
             THE CONSULTATION JOURNEY
           </p>
-          <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#121016] font-normal leading-tight">
+          <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#16141A] font-normal leading-tight">
             Our Approach
           </h2>
-          <p className="text-sm sm:text-base text-[#55525B] font-light leading-relaxed">
+          <p className="text-sm sm:text-base text-[#4E4B54] font-light leading-relaxed">
             A structured, step-by-step process centered on communication, comfort, and informed choice.
           </p>
         </div>
@@ -44,17 +44,17 @@ export default function OurApproach() {
           {steps.map((item) => (
             <div
               key={item.step}
-              className="space-y-4 pt-6 border-t border-[#E8E6EB]"
+              className="space-y-4 pt-6 border-t border-[#DCE5DF]"
             >
-              <span className="font-mono text-xs text-[#84808C] block">
+              <span className="font-mono text-xs text-[#7A7682] block">
                 STEP {item.step}
               </span>
 
-              <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#121016] font-normal">
+              <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#16141A] font-normal">
                 {item.title}
               </h3>
 
-              <p className="text-xs sm:text-sm text-[#55525B] font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#4E4B54] font-light leading-relaxed">
                 {item.description}
               </p>
             </div>

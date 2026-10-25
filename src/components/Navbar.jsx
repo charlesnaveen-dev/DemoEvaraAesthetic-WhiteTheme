@@ -35,7 +35,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-[#E8E6EB] py-3.5"
+            ? "bg-white/95 backdrop-blur-md border-b border-[#E2E6E2] py-3.5 shadow-xs"
             : "bg-transparent py-5 lg:py-6"
         }`}
       >
@@ -52,10 +52,10 @@ export default function Navbar() {
                 }`}
               />
               <div className="flex flex-col">
-                <span className="font-serif-luxury tracking-[0.2em] text-lg sm:text-xl font-medium text-[#121016] group-hover:text-[#3B1457] transition-colors">
+                <span className="font-serif-luxury tracking-[0.2em] text-lg sm:text-xl font-medium text-[#16141A] group-hover:text-[#3B1457] transition-colors">
                   EVARA
                 </span>
-                <span className="text-[9px] tracking-[0.3em] text-[#84808C] uppercase font-light">
+                <span className="text-[9px] tracking-[0.3em] text-[#7A7682] uppercase font-light">
                   AESTHETICS
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default function Navbar() {
                     className={`text-[11px] uppercase tracking-[0.2em] transition-colors relative py-1 font-medium ${
                       isActive
                         ? "text-[#3B1457] font-semibold"
-                        : "text-[#55525B] hover:text-[#121016]"
+                        : "text-[#4E4B54] hover:text-[#16141A]"
                     }`}
                   >
                     {link.name}
@@ -88,16 +88,16 @@ export default function Navbar() {
             <div className="flex items-center space-x-4">
               <Link
                 to="/book-consultation"
-                className="hidden sm:inline-flex items-center px-6 py-2.5 text-[11px] tracking-[0.18em] uppercase font-medium text-white bg-[#3B1457] hover:bg-[#4F1D75] transition-colors rounded-full"
+                className="hidden sm:inline-flex items-center px-6 py-2.5 text-[11px] tracking-[0.18em] uppercase font-medium text-white bg-[#3B1457] hover:bg-[#4D1A72] transition-colors rounded-full shadow-xs"
               >
                 <span>BOOK CONSULTATION</span>
-                <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 opacity-80" />
+                <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 opacity-90" />
               </Link>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-[#121016] hover:text-[#3B1457] focus:outline-none"
+                className="lg:hidden p-2 text-[#16141A] hover:text-[#3B1457] focus:outline-none cursor-pointer"
                 aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -108,7 +108,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Editorial Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -116,10 +116,10 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 pb-10 flex flex-col justify-between overflow-y-auto"
+            className="fixed inset-0 z-40 bg-[#FAF9F7] pt-24 px-6 pb-10 flex flex-col justify-between overflow-y-auto"
           >
             <div className="space-y-8 mt-4">
-              <div className="flex items-center justify-between border-b border-[#E8E6EB] pb-3 text-[10px] uppercase tracking-[0.25em] text-[#84808C]">
+              <div className="flex items-center justify-between border-b border-[#E2E6E2] pb-3 text-[10px] uppercase tracking-[0.25em] text-[#7A7682]">
                 <span>EVARA AESTHETICS</span>
                 <span>COIMBATORE</span>
               </div>
@@ -133,18 +133,18 @@ export default function Navbar() {
                       to={link.path}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`font-serif-luxury text-3xl tracking-wide transition-colors flex items-center justify-between py-1 ${
-                        isActive ? "text-[#3B1457] font-medium" : "text-[#121016]"
+                        isActive ? "text-[#3B1457] font-medium" : "text-[#16141A]"
                       }`}
                     >
                       <span>{link.name}</span>
-                      <ArrowUpRight className="w-5 h-5 text-[#84808C]" />
+                      <ArrowUpRight className="w-5 h-5 text-[#7A7682]" />
                     </Link>
                   );
                 })}
               </nav>
             </div>
 
-            <div className="space-y-4 pt-8 border-t border-[#E8E6EB]">
+            <div className="space-y-4 pt-8 border-t border-[#E2E6E2]">
               <Link
                 to="/book-consultation"
                 onClick={() => setMobileMenuOpen(false)}
@@ -152,9 +152,9 @@ export default function Navbar() {
               >
                 BOOK CONSULTATION
               </Link>
-              <div className="flex justify-between items-center text-xs tracking-wider text-[#55525B]">
+              <div className="flex justify-between items-center text-xs tracking-wider text-[#4E4B54]">
                 <span>TATABAD, COIMBATORE</span>
-                <a href="tel:+919943999177" className="font-medium text-[#121016]">099439 99177</a>
+                <a href="tel:+919943999177" className="font-medium text-[#16141A]">099439 99177</a>
               </div>
             </div>
           </motion.div>

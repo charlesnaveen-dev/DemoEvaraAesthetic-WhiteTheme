@@ -45,35 +45,35 @@ export default function BookingForm() {
   };
 
   return (
-    <div className="bg-white border border-[#E6E2ED] rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xs">
+    <div className="bg-white border border-[#E2E6E2] rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xs">
       
       {/* Front-end Demo Badge */}
-      <div className="mb-6 flex items-start space-x-2.5 bg-[#FAF9FC] border border-[#E6E2ED] p-3.5 rounded-xl text-xs text-[#5B5566]">
-        <Info className="w-4 h-4 text-[#0284C7] shrink-0 mt-0.5" />
-        <p className="font-light">
-          <strong className="text-[#14101A] font-medium">Interactive Demo Mode:</strong> This appointment form records state in the browser interface for demonstration purposes. No real server or SMS is dispatched.
+      <div className="mb-6 flex items-start space-x-2.5 bg-[#EEF4F0] border border-[#DCE5DF] p-4 rounded-2xl text-xs text-[#4E4B54]">
+        <Info className="w-4 h-4 text-[#3B1457] shrink-0 mt-0.5" />
+        <p className="font-light leading-relaxed">
+          <strong className="text-[#16141A] font-medium">Interactive Demo Mode:</strong> This appointment form records state in the browser interface for demonstration purposes. No real server or SMS is dispatched.
         </p>
       </div>
 
       {submitted ? (
         <div className="text-center py-12 space-y-6">
-          <div className="w-16 h-16 bg-[#E0F2FE] border border-[#BAE6FD] rounded-full flex items-center justify-center mx-auto text-[#0284C7]">
+          <div className="w-16 h-16 bg-[#EEF4F0] border border-[#DCE5DF] rounded-full flex items-center justify-center mx-auto text-[#3B1457]">
             <CheckCircle2 className="w-8 h-8" />
           </div>
 
           <div className="space-y-2">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-[#0284C7] font-semibold block">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-[#3B1457] font-semibold block">
               DEMO REQUEST LOGGED
             </span>
-            <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#14101A] font-normal">
+            <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#16141A] font-normal">
               Thank you, {formData.name}.
             </h3>
-            <p className="text-sm sm:text-base text-[#5B5566] font-light max-w-lg mx-auto leading-relaxed">
-              Your consultation request for <strong className="text-[#14101A] font-semibold">{formData.service}</strong> on <strong className="text-[#14101A] font-semibold">{formData.preferredDate}</strong> ({formData.preferredTime}) has been recorded in the demonstration UI.
+            <p className="text-sm sm:text-base text-[#4E4B54] font-light max-w-lg mx-auto leading-relaxed">
+              Your consultation request for <strong className="text-[#16141A] font-semibold">{formData.service}</strong> on <strong className="text-[#16141A] font-semibold">{formData.preferredDate}</strong> ({formData.preferredTime}) has been recorded in the demonstration UI.
             </p>
-            <div className="mt-4 p-4 bg-[#FAF9FC] border border-[#E6E2ED] rounded-xl max-w-md mx-auto text-xs text-[#5B5566] font-light">
-              <span className="font-medium text-[#14101A] block mb-1">Simulated Confirmation Notice</span>
-              Our care coordinator would reach out to <strong className="text-[#14101A] font-medium">{formData.phone}</strong> to confirm your slot.
+            <div className="mt-4 p-4 bg-[#FAF9F7] border border-[#E2E6E2] rounded-2xl max-w-md mx-auto text-xs text-[#4E4B54] font-light">
+              <span className="font-medium text-[#16141A] block mb-1">Simulated Confirmation Notice</span>
+              Our care coordinator would reach out to <strong className="text-[#16141A] font-medium">{formData.phone}</strong> to confirm your slot.
             </div>
           </div>
 
@@ -90,7 +90,7 @@ export default function BookingForm() {
                 message: ''
               });
             }}
-            className="mt-6 px-8 py-3.5 bg-transparent border border-[#E6E2ED] text-xs uppercase tracking-[0.2em] text-[#14101A] hover:border-[#3B1457] hover:text-[#3B1457] rounded-full transition-colors font-medium"
+            className="mt-6 px-8 py-3.5 bg-transparent border border-[#E2E6E2] text-xs uppercase tracking-[0.2em] text-[#16141A] hover:border-[#3B1457] hover:text-[#3B1457] rounded-full transition-colors font-medium cursor-pointer"
           >
             SUBMIT ANOTHER REQUEST
           </button>
@@ -98,14 +98,14 @@ export default function BookingForm() {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-8">
           
-          <div className="space-y-2 border-b border-[#E6E2ED] pb-6">
+          <div className="space-y-2 border-b border-[#E2E6E2] pb-6">
             <span className="text-[10px] uppercase tracking-[0.26em] text-[#3B1457] font-semibold block">
               PERSONALIZED CONSULTATION REQUEST
             </span>
-            <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#14101A] font-normal">
+            <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#16141A] font-normal">
               Book your visit.
             </h3>
-            <p className="text-xs sm:text-sm text-[#5B5566] font-light">
+            <p className="text-xs sm:text-sm text-[#4E4B54] font-light">
               Select your concern and preferred timing. We will get in touch to confirm your appointment.
             </p>
           </div>
@@ -114,8 +114,8 @@ export default function BookingForm() {
             
             {/* Full Name */}
             <div className="space-y-2">
-              <label className="text-[11px] uppercase tracking-widest text-[#5B5566] font-semibold flex items-center">
-                <User className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
+              <label className="text-[11px] uppercase tracking-widest text-[#4E4B54] font-semibold flex items-center">
+                <User className="w-3.5 h-3.5 mr-1.5 text-[#3B1457]" />
                 FULL NAME *
               </label>
               <input
@@ -124,17 +124,17 @@ export default function BookingForm() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="e.g. Ananya Sharma"
-                className={`w-full bg-[#FAF9FC] border ${
-                  errors.name ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#3B1457]'
-                } px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors`}
+                className={`w-full bg-[#FAF9F7] border ${
+                  errors.name ? 'border-red-500' : 'border-[#E2E6E2] focus:border-[#3B1457]'
+                } px-4 py-3.5 rounded-xl text-sm text-[#16141A] focus:outline-none transition-colors`}
               />
               {errors.name && <p className="text-[11px] text-red-500 font-light">{errors.name}</p>}
             </div>
 
             {/* Contact Phone */}
             <div className="space-y-2">
-              <label className="text-[11px] uppercase tracking-widest text-[#5B5566] font-semibold flex items-center">
-                <Phone className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
+              <label className="text-[11px] uppercase tracking-widest text-[#4E4B54] font-semibold flex items-center">
+                <Phone className="w-3.5 h-3.5 mr-1.5 text-[#3B1457]" />
                 PHONE NUMBER *
               </label>
               <input
@@ -143,17 +143,17 @@ export default function BookingForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="e.g. +91 98765 43210"
-                className={`w-full bg-[#FAF9FC] border ${
-                  errors.phone ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#3B1457]'
-                } px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors`}
+                className={`w-full bg-[#FAF9F7] border ${
+                  errors.phone ? 'border-red-500' : 'border-[#E2E6E2] focus:border-[#3B1457]'
+                } px-4 py-3.5 rounded-xl text-sm text-[#16141A] focus:outline-none transition-colors`}
               />
               {errors.phone && <p className="text-[11px] text-red-500 font-light">{errors.phone}</p>}
             </div>
 
             {/* Email Address */}
             <div className="space-y-2">
-              <label className="text-[11px] uppercase tracking-widest text-[#5B5566] font-semibold flex items-center">
-                <Mail className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
+              <label className="text-[11px] uppercase tracking-widest text-[#4E4B54] font-semibold flex items-center">
+                <Mail className="w-3.5 h-3.5 mr-1.5 text-[#3B1457]" />
                 EMAIL ADDRESS (OPTIONAL)
               </label>
               <input
@@ -162,23 +162,23 @@ export default function BookingForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="name@example.com"
-                className={`w-full bg-[#FAF9FC] border ${
-                  errors.email ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#3B1457]'
-                } px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors`}
+                className={`w-full bg-[#FAF9F7] border ${
+                  errors.email ? 'border-red-500' : 'border-[#E2E6E2] focus:border-[#3B1457]'
+                } px-4 py-3.5 rounded-xl text-sm text-[#16141A] focus:outline-none transition-colors`}
               />
               {errors.email && <p className="text-[11px] text-red-500 font-light">{errors.email}</p>}
             </div>
 
             {/* Primary Service / Concern */}
             <div className="space-y-2">
-              <label className="text-[11px] uppercase tracking-widest text-[#5B5566] font-semibold">
+              <label className="text-[11px] uppercase tracking-widest text-[#4E4B54] font-semibold">
                 PRIMARY SERVICE / CONCERN
               </label>
               <select
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full bg-[#FAF9FC] border border-[#E6E2ED] focus:border-[#3B1457] px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors"
+                className="w-full bg-[#FAF9F7] border border-[#E2E6E2] focus:border-[#3B1457] px-4 py-3.5 rounded-xl text-sm text-[#16141A] focus:outline-none transition-colors"
               >
                 <option value="Smile Correction">Dental: Smile Correction</option>
                 <option value="Cosmetic Dentistry">Dental: Cosmetic Dentistry</option>
@@ -195,8 +195,8 @@ export default function BookingForm() {
 
             {/* Preferred Date */}
             <div className="space-y-2">
-              <label className="text-[11px] uppercase tracking-widest text-[#5B5566] font-semibold flex items-center">
-                <Calendar className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
+              <label className="text-[11px] uppercase tracking-widest text-[#4E4B54] font-semibold flex items-center">
+                <Calendar className="w-3.5 h-3.5 mr-1.5 text-[#3B1457]" />
                 PREFERRED DATE *
               </label>
               <input
@@ -204,24 +204,24 @@ export default function BookingForm() {
                 name="preferredDate"
                 value={formData.preferredDate}
                 onChange={handleChange}
-                className={`w-full bg-[#FAF9FC] border ${
-                  errors.preferredDate ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#3B1457]'
-                } px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors`}
+                className={`w-full bg-[#FAF9F7] border ${
+                  errors.preferredDate ? 'border-red-500' : 'border-[#E2E6E2] focus:border-[#3B1457]'
+                } px-4 py-3.5 rounded-xl text-sm text-[#16141A] focus:outline-none transition-colors`}
               />
               {errors.preferredDate && <p className="text-[11px] text-red-500 font-light">{errors.preferredDate}</p>}
             </div>
 
             {/* Preferred Time Slot */}
             <div className="space-y-2">
-              <label className="text-[11px] uppercase tracking-widest text-[#5B5566] font-semibold flex items-center">
-                <Clock className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
+              <label className="text-[11px] uppercase tracking-widest text-[#4E4B54] font-semibold flex items-center">
+                <Clock className="w-3.5 h-3.5 mr-1.5 text-[#3B1457]" />
                 PREFERRED TIME SLOT
               </label>
               <select
                 name="preferredTime"
                 value={formData.preferredTime}
                 onChange={handleChange}
-                className="w-full bg-[#FAF9FC] border border-[#E6E2ED] focus:border-[#3B1457] px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors"
+                className="w-full bg-[#FAF9F7] border border-[#E2E6E2] focus:border-[#3B1457] px-4 py-3.5 rounded-xl text-sm text-[#16141A] focus:outline-none transition-colors"
               >
                 <option value="Morning (10 AM - 1 PM)">Morning (10 AM - 1 PM)</option>
                 <option value="Afternoon (2 PM - 5 PM)">Afternoon (2 PM - 5 PM)</option>
@@ -233,8 +233,8 @@ export default function BookingForm() {
 
           {/* Optional Message */}
           <div className="space-y-2">
-            <label className="text-[11px] uppercase tracking-widest text-[#5B5566] font-semibold flex items-center">
-              <MessageSquare className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
+            <label className="text-[11px] uppercase tracking-widest text-[#4E4B54] font-semibold flex items-center">
+              <MessageSquare className="w-3.5 h-3.5 mr-1.5 text-[#3B1457]" />
               ADDITIONAL NOTES / QUESTIONS (OPTIONAL)
             </label>
             <textarea
@@ -243,14 +243,14 @@ export default function BookingForm() {
               value={formData.message}
               onChange={handleChange}
               placeholder="Tell us any specific concerns or details..."
-              className="w-full bg-[#FAF9FC] border border-[#E6E2ED] focus:border-[#3B1457] px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors"
+              className="w-full bg-[#FAF9F7] border border-[#E2E6E2] focus:border-[#3B1457] px-4 py-3.5 rounded-xl text-sm text-[#16141A] focus:outline-none transition-colors"
             />
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-4 bg-[#3B1457] hover:bg-[#4E1A73] text-white text-xs uppercase tracking-[0.2em] font-medium rounded-full transition-all flex items-center justify-center space-x-2 shadow-xs group"
+            className="w-full py-4 bg-[#3B1457] hover:bg-[#4D1A72] text-white text-xs uppercase tracking-[0.2em] font-medium rounded-full transition-all flex items-center justify-center space-x-2 shadow-xs group cursor-pointer"
           >
             <span>REQUEST CONSULTATION</span>
             <div className="w-5 h-5 rounded-full bg-white/20 group-hover:bg-white/30 flex items-center justify-center ml-2 transition-colors">

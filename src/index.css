@@ -2,16 +2,27 @@
 
 @theme {
   --color-purple-brand: #3B1457;
-  --color-purple-hover: #4F1D75;
-  --color-purple-tint: #F5EDFA;
+  --color-purple-hover: #4D1A72;
+  --color-purple-tint: #F6EFF9;
+  
+  --color-mint-surface: #EEF4F0;
+  --color-mint-subtle: #F4F7F4;
+  --color-mint-border: #DCE5DF;
+  --color-mint-accent: #324C3D;
+  
   --color-sky-brand: #0284C7;
   --color-sky-tint: #F0F9FF;
+  
   --color-surface-bg: #FFFFFF;
-  --color-surface-muted: #F9F9F8;
-  --color-surface-border: #E8E6EB;
-  --color-text-main: #121016;
-  --color-text-muted: #55525B;
-  --color-text-subtle: #84808C;
+  --color-surface-warm: #FAF9F7;
+  --color-surface-muted: #F5F4F0;
+  --color-surface-border: #E8ECE9;
+  --color-border-subtle: #E2E6E2;
+  
+  --color-text-main: #16141A;
+  --color-text-muted: #4E4B54;
+  --color-text-subtle: #7A7682;
+  
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
@@ -19,10 +30,12 @@
 @layer base {
   :root {
     --bg-primary: #FFFFFF;
-    --bg-secondary: #F9F9F8;
-    --text-primary: #121016;
-    --text-muted: #55525B;
-    --border-color: #E8E6EB;
+    --bg-mint: #EEF4F0;
+    --bg-warm: #FAF9F7;
+    --text-primary: #16141A;
+    --text-muted: #4E4B54;
+    --text-subtle: #7A7682;
+    --border-color: #E2E6E2;
     --accent-purple: #3B1457;
     --accent-sky: #0284C7;
   }
@@ -32,10 +45,13 @@
     color: var(--text-primary);
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, .font-serif-luxury {
     font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -49,7 +65,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #DDD9E2;
+  background: #DCE5DF;
   border-radius: 3px;
 }
 
