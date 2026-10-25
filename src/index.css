@@ -1,42 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --color-purple-brand: #4A1571;
-  --color-purple-deep: #2A0845;
-  --color-purple-noir: #150C24;
-  --color-purple-light: #7E22CE;
-  --color-purple-tint: #F3E8FF;
+  --color-purple-brand: #3B1457;
+  --color-purple-hover: #4F1D75;
+  --color-purple-tint: #F5EDFA;
   --color-sky-brand: #0284C7;
-  --color-sky-light: #38BDF8;
-  --color-sky-tint: #E0F2FE;
-  --color-surface-pearl: #FAF9FC;
-  --color-surface-card: #FFFFFF;
-  --color-surface-border: #E6E2ED;
-  --color-text-main: #14101A;
-  --color-text-muted: #5B5566;
+  --color-sky-tint: #F0F9FF;
+  --color-surface-bg: #FFFFFF;
+  --color-surface-muted: #F9F9F8;
+  --color-surface-border: #E8E6EB;
+  --color-text-main: #121016;
+  --color-text-muted: #55525B;
+  --color-text-subtle: #84808C;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
   :root {
-    --bg-primary: #FAF9FC;
-    --bg-secondary: #FFFFFF;
-    --text-primary: #14101A;
-    --text-muted: #5B5566;
-    --border-color: #E6E2ED;
-    --accent-purple: #4A1571;
-    --purple-deep: #2A0845;
-    --purple-light: #7E22CE;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F9F9F8;
+    --text-primary: #121016;
+    --text-muted: #55525B;
+    --border-color: #E8E6EB;
+    --accent-purple: #3B1457;
     --accent-sky: #0284C7;
-    --sky-light: #38BDF8;
-    --bg-dark: #150C24;
   }
 
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     letter-spacing: -0.01em;
   }
 
@@ -45,57 +39,22 @@
   }
 }
 
-/* Custom Utilities for Evara Brand Palette */
-.text-purple-brand {
-  color: #4A1571;
-}
-
-.text-purple-deep {
-  color: #2A0845;
-}
-
-.bg-purple-brand {
-  background-color: #4A1571;
-}
-
-.bg-purple-deep {
-  background-color: #2A0845;
-}
-
-.text-sky-brand {
-  color: #0284C7;
-}
-
-.bg-sky-brand {
-  background-color: #0284C7;
-}
-
-.border-thin {
-  border-color: #E6E2ED;
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF9FC;
+  background: #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D8D4E2;
+  background: #DDD9E2;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4A1571;
-}
-
-/* Delicate Luxury Grain texture overlay */
-.bg-grain {
-  background-image: radial-gradient(rgba(74, 21, 113, 0.025) 1px, transparent 0);
-  background-size: 24px 24px;
+  background: #3B1457;
 }
 
 /* Reduced motion preference support */

@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import SEOHead from '../components/SEOHead';
 import StructuredData from '../components/StructuredData';
 import { SERVICES } from '../data/servicesData';
-import { CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
+import { CheckCircle2, ShieldCheck } from 'lucide-react';
 import BookingForm from '../components/BookingForm';
 
 export default function SkinTreatmentPage() {
@@ -15,7 +15,7 @@ export default function SkinTreatmentPage() {
     <>
       <SEOHead
         title={`${service.name} Coimbatore | Evara Aesthetics`}
-        description={`${service.shortDescription} Clinical skin care at Evara Aesthetics in Coimbatore with personalized consultations.`}
+        description={`${service.shortDescription} Clinical dermatological consultation and evidence-based treatments at Evara Aesthetics Coimbatore.`}
         canonical={`https://evaraaesthetics.com${service.path}`}
       />
       <StructuredData
@@ -31,7 +31,7 @@ export default function SkinTreatmentPage() {
       <section className="pt-36 sm:pt-40 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FAF9FC] border-b border-[#E6E2ED]">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="flex items-center space-x-3">
-            <Link to="/skin" className="text-xs uppercase tracking-widest text-[#5B5566] hover:text-[#4A1571] font-medium transition-colors">
+            <Link to="/skin" className="text-xs uppercase tracking-widest text-[#5B5566] hover:text-[#3B1457] font-medium transition-colors">
               SKIN DISCIPLINE
             </Link>
             <span className="text-xs text-[#E6E2ED]">/</span>
@@ -53,7 +53,7 @@ export default function SkinTreatmentPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           <div className="lg:col-span-7 space-y-10">
-            <div className="aspect-[16/10] bg-[#FAF9FC] border border-[#E6E2ED] rounded-3xl overflow-hidden shadow-sm">
+            <div className="aspect-[16/10] bg-[#FAF9FC] border border-[#E6E2ED] rounded-2xl overflow-hidden shadow-xs">
               <img
                 src={service.image}
                 alt={service.name}
@@ -62,17 +62,17 @@ export default function SkinTreatmentPage() {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src = "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop";
                 }}
-                className="w-full h-full object-cover grayscale opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700 ease-out"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
 
             <div className="space-y-6">
               <h2 className="font-serif-luxury text-3xl sm:text-4xl text-[#14101A] font-normal">
-                Treatment Highlights & Care Strategy
+                Key Treatment Highlights
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.highlights.map((h, i) => (
-                  <div key={i} className="flex items-start space-x-3 bg-[#FAF9FC] border border-[#E6E2ED] rounded-2xl p-4.5">
+                  <div key={i} className="flex items-start space-x-3 bg-[#FAF9FC] border border-[#E6E2ED] rounded-xl p-4.5">
                     <CheckCircle2 className="w-4 h-4 text-[#0284C7] mt-0.5 shrink-0" />
                     <span className="text-xs sm:text-sm text-[#14101A] font-light">{h}</span>
                   </div>
@@ -80,11 +80,11 @@ export default function SkinTreatmentPage() {
               </div>
             </div>
 
-            {/* Suitability & Responsible Disclaimer */}
-            <div className="bg-[#FAF5FF] border-l-4 border-l-[#4A1571] border border-[#E9D5FF] rounded-2xl p-6 sm:p-7 space-y-2">
-              <span className="text-[10px] uppercase tracking-widest text-[#4A1571] font-semibold flex items-center">
+            {/* Suitability */}
+            <div className="bg-[#FAF9FC] border-l-4 border-l-[#3B1457] border border-[#E6E2ED] rounded-xl p-6 sm:p-7 space-y-2">
+              <span className="text-[10px] uppercase tracking-widest text-[#3B1457] font-semibold flex items-center">
                 <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
-                SUITABILITY & CLINICAL EVALUATION
+                SUITABILITY & CONSULTATION
               </span>
               <p className="text-xs sm:text-sm text-[#5B5566] font-light leading-relaxed">
                 {service.suitability}

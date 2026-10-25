@@ -21,7 +21,7 @@ export default function MobileBottomBar() {
 
         <Link
           to="/book-consultation"
-          className="min-h-[44px] py-3 bg-[#2A0845] active:bg-[#4A1571] text-white text-[11px] uppercase tracking-widest font-semibold flex items-center justify-center space-x-2 rounded-full transition-colors shadow-xs"
+          className="min-h-[44px] py-3 bg-[#3B1457] active:bg-[#4E1A73] text-white text-[11px] uppercase tracking-widest font-semibold flex items-center justify-center space-x-2 rounded-full transition-colors shadow-xs"
         >
           <Calendar className="w-3.5 h-3.5 text-[#38BDF8]" />
           <span>BOOK NOW</span>

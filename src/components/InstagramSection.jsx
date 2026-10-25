@@ -27,15 +27,15 @@ export default function InstagramSection() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-t border-[#E6E2ED]">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white border-t border-[#E6E2ED]">
       <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E6E2ED] pb-8">
           <div>
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF] mb-3">
-              <Instagram className="w-3.5 h-3.5 text-[#4A1571]" />
-              <span className="text-[10px] uppercase tracking-[0.24em] text-[#4A1571] font-semibold">
+            <div className="flex items-center space-x-2 text-[#3B1457] mb-2">
+              <Instagram className="w-4 h-4" />
+              <span className="text-[10px] uppercase tracking-[0.24em] font-semibold">
                 {CLINIC_INFO.instagramHandle}
               </span>
             </div>
@@ -51,10 +51,10 @@ export default function InstagramSection() {
               href={CLINIC_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-xs uppercase tracking-[0.2em] text-[#14101A] hover:text-[#4A1571] font-semibold transition-colors group"
+              className="inline-flex items-center text-xs uppercase tracking-[0.2em] text-[#3B1457] hover:text-[#0284C7] font-semibold transition-colors group"
             >
               <span>FOLLOW ON INSTAGRAM</span>
-              <div className="w-6 h-6 rounded-full bg-[#FAF5FF] group-hover:bg-[#4A1571] group-hover:text-white flex items-center justify-center ml-2 transition-all">
+              <div className="w-6 h-6 rounded-full bg-[#FAF5FF] group-hover:bg-[#3B1457] group-hover:text-white flex items-center justify-center ml-2 transition-all">
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
             </a>
@@ -82,23 +82,24 @@ function InstagramCard({ post }) {
       href={CLINIC_INFO.instagramUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group ${isActive ? 'is-active' : ''} relative bg-[#FAF9FC] border border-[#E6E2ED] hover:border-[#4A1571]/50 group-[.is-active]:border-[#4A1571]/50 rounded-3xl aspect-square overflow-hidden block shadow-sm hover:shadow-xl hover:shadow-purple-950/5 transition-all duration-300`}
+      className={`group ${isActive ? 'is-active' : ''} bg-[#FAF9FC] border border-[#E6E2ED] hover:border-[#3B1457]/40 rounded-2xl overflow-hidden block shadow-xs hover:shadow-md transition-all duration-300`}
     >
-      <img
-        src={post.img}
-        alt={`Evara Instagram - ${post.topic}`}
-        loading="lazy"
-        className="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-[.is-active]:opacity-100 group-hover:scale-105 group-[.is-active]:scale-105 transition-all duration-700 ease-out"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#14101A]/80 via-transparent to-transparent opacity-60" />
-      
-      <div className="absolute inset-0 p-5 flex flex-col justify-between items-start opacity-0 group-hover:opacity-100 group-[.is-active]:opacity-100 transition-opacity duration-300">
-        <span className="text-[10px] uppercase tracking-widest bg-[#2A0845]/90 text-[#38BDF8] px-3 py-1 rounded-full font-medium">
+      <div className="relative aspect-square overflow-hidden bg-[#F0EEF5]">
+        <img
+          src={post.img}
+          alt={`Evara Instagram - ${post.topic}`}
+          loading="lazy"
+          className="w-full h-full object-cover group-hover:scale-105 group-[.is-active]:scale-105 transition-transform duration-700 ease-out"
+        />
+        <div className="absolute inset-0 bg-[#14101A]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+
+      <div className="p-4 bg-white flex items-center justify-between border-t border-[#E6E2ED]">
+        <span className="text-xs font-serif-luxury text-[#14101A] font-medium">
           {post.topic}
         </span>
-        <div className="flex items-center space-x-1.5 text-white text-xs font-medium bg-black/40 backdrop-blur-xs px-3 py-1.5 rounded-full">
-          <Instagram className="w-3.5 h-3.5" />
-          <span>View Post</span>
+        <div className="text-[#3B1457] group-hover:text-[#0284C7] transition-colors">
+          <ArrowUpRight className="w-3.5 h-3.5" />
         </div>
       </div>
     </a>

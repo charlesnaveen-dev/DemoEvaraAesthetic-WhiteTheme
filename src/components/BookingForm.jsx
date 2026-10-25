@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { CheckCircle2, ArrowRight, Calendar, Clock, User, Phone, Mail, MessageSquare, Sparkles } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Calendar, Clock, User, Phone, Mail, MessageSquare, Info } from 'lucide-react';
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    service: 'Dental Care',
+    service: 'Smile Correction',
     preferredDate: '',
     preferredTime: 'Morning (10 AM - 1 PM)',
     message: ''
@@ -45,23 +45,36 @@ export default function BookingForm() {
   };
 
   return (
-    <div className="bg-white border border-[#E6E2ED] rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xl shadow-purple-950/5">
+    <div className="bg-white border border-[#E6E2ED] rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xs">
       
+      {/* Front-end Demo Badge */}
+      <div className="mb-6 flex items-start space-x-2.5 bg-[#FAF9FC] border border-[#E6E2ED] p-3.5 rounded-xl text-xs text-[#5B5566]">
+        <Info className="w-4 h-4 text-[#0284C7] shrink-0 mt-0.5" />
+        <p className="font-light">
+          <strong className="text-[#14101A] font-medium">Interactive Demo Mode:</strong> This appointment form records state in the browser interface for demonstration purposes. No real server or SMS is dispatched.
+        </p>
+      </div>
+
       {submitted ? (
-        <div className="text-center py-16 space-y-6 animate-fadeIn">
-          <div className="w-16 h-16 bg-[#FAF5FF] border border-[#E9D5FF] rounded-full flex items-center justify-center mx-auto text-[#4A1571]">
-            <CheckCircle2 className="w-8 h-8 text-[#0284C7]" />
+        <div className="text-center py-12 space-y-6">
+          <div className="w-16 h-16 bg-[#E0F2FE] border border-[#BAE6FD] rounded-full flex items-center justify-center mx-auto text-[#0284C7]">
+            <CheckCircle2 className="w-8 h-8" />
           </div>
+
           <div className="space-y-2">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-[#0284C7] font-semibold">
-              REQUEST RECEIVED
+            <span className="text-[10px] uppercase tracking-[0.3em] text-[#0284C7] font-semibold block">
+              DEMO REQUEST LOGGED
             </span>
             <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#14101A] font-normal">
               Thank you, {formData.name}.
             </h3>
-            <p className="text-sm sm:text-base text-[#5B5566] font-light max-w-md mx-auto leading-relaxed">
-              We have logged your consultation request for <strong className="text-[#14101A] font-semibold">{formData.service}</strong> on <strong className="text-[#14101A] font-semibold">{formData.preferredDate}</strong>. Our care coordinator will contact you at <strong className="text-[#14101A] font-semibold">{formData.phone}</strong> to confirm your slot.
+            <p className="text-sm sm:text-base text-[#5B5566] font-light max-w-lg mx-auto leading-relaxed">
+              Your consultation request for <strong className="text-[#14101A] font-semibold">{formData.service}</strong> on <strong className="text-[#14101A] font-semibold">{formData.preferredDate}</strong> ({formData.preferredTime}) has been recorded in the demonstration UI.
             </p>
+            <div className="mt-4 p-4 bg-[#FAF9FC] border border-[#E6E2ED] rounded-xl max-w-md mx-auto text-xs text-[#5B5566] font-light">
+              <span className="font-medium text-[#14101A] block mb-1">Simulated Confirmation Notice</span>
+              Our care coordinator would reach out to <strong className="text-[#14101A] font-medium">{formData.phone}</strong> to confirm your slot.
+            </div>
           </div>
 
           <button
@@ -71,13 +84,13 @@ export default function BookingForm() {
                 name: '',
                 phone: '',
                 email: '',
-                service: 'Dental Care',
+                service: 'Smile Correction',
                 preferredDate: '',
                 preferredTime: 'Morning (10 AM - 1 PM)',
                 message: ''
               });
             }}
-            className="mt-6 px-8 py-3.5 bg-transparent border border-[#E6E2ED] text-xs uppercase tracking-[0.2em] text-[#14101A] hover:border-[#4A1571] hover:text-[#4A1571] rounded-full transition-colors font-medium"
+            className="mt-6 px-8 py-3.5 bg-transparent border border-[#E6E2ED] text-xs uppercase tracking-[0.2em] text-[#14101A] hover:border-[#3B1457] hover:text-[#3B1457] rounded-full transition-colors font-medium"
           >
             SUBMIT ANOTHER REQUEST
           </button>
@@ -86,12 +99,9 @@ export default function BookingForm() {
         <form onSubmit={handleSubmit} className="space-y-8">
           
           <div className="space-y-2 border-b border-[#E6E2ED] pb-6">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF] mb-2">
-              <Sparkles className="w-3 h-3 text-[#4A1571]" />
-              <span className="text-[10px] uppercase tracking-[0.26em] text-[#4A1571] font-semibold">
-                PERSONALIZED CONSULTATION REQUEST
-              </span>
-            </div>
+            <span className="text-[10px] uppercase tracking-[0.26em] text-[#3B1457] font-semibold block">
+              PERSONALIZED CONSULTATION REQUEST
+            </span>
             <h3 className="font-serif-luxury text-3xl sm:text-4xl text-[#14101A] font-normal">
               Book your visit.
             </h3>
@@ -115,7 +125,7 @@ export default function BookingForm() {
                 onChange={handleChange}
                 placeholder="e.g. Ananya Sharma"
                 className={`w-full bg-[#FAF9FC] border ${
-                  errors.name ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#4A1571]'
+                  errors.name ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#3B1457]'
                 } px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors`}
               />
               {errors.name && <p className="text-[11px] text-red-500 font-light">{errors.name}</p>}
@@ -134,7 +144,7 @@ export default function BookingForm() {
                 onChange={handleChange}
                 placeholder="e.g. +91 98765 43210"
                 className={`w-full bg-[#FAF9FC] border ${
-                  errors.phone ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#4A1571]'
+                  errors.phone ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#3B1457]'
                 } px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors`}
               />
               {errors.phone && <p className="text-[11px] text-red-500 font-light">{errors.phone}</p>}
@@ -153,7 +163,7 @@ export default function BookingForm() {
                 onChange={handleChange}
                 placeholder="name@example.com"
                 className={`w-full bg-[#FAF9FC] border ${
-                  errors.email ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#4A1571]'
+                  errors.email ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#3B1457]'
                 } px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors`}
               />
               {errors.email && <p className="text-[11px] text-red-500 font-light">{errors.email}</p>}
@@ -168,7 +178,7 @@ export default function BookingForm() {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full bg-[#FAF9FC] border border-[#E6E2ED] focus:border-[#4A1571] px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors"
+                className="w-full bg-[#FAF9FC] border border-[#E6E2ED] focus:border-[#3B1457] px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors"
               >
                 <option value="Smile Correction">Dental: Smile Correction</option>
                 <option value="Cosmetic Dentistry">Dental: Cosmetic Dentistry</option>
@@ -195,7 +205,7 @@ export default function BookingForm() {
                 value={formData.preferredDate}
                 onChange={handleChange}
                 className={`w-full bg-[#FAF9FC] border ${
-                  errors.preferredDate ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#4A1571]'
+                  errors.preferredDate ? 'border-red-500' : 'border-[#E6E2ED] focus:border-[#3B1457]'
                 } px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors`}
               />
               {errors.preferredDate && <p className="text-[11px] text-red-500 font-light">{errors.preferredDate}</p>}
@@ -211,7 +221,7 @@ export default function BookingForm() {
                 name="preferredTime"
                 value={formData.preferredTime}
                 onChange={handleChange}
-                className="w-full bg-[#FAF9FC] border border-[#E6E2ED] focus:border-[#4A1571] px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors"
+                className="w-full bg-[#FAF9FC] border border-[#E6E2ED] focus:border-[#3B1457] px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors"
               >
                 <option value="Morning (10 AM - 1 PM)">Morning (10 AM - 1 PM)</option>
                 <option value="Afternoon (2 PM - 5 PM)">Afternoon (2 PM - 5 PM)</option>
@@ -233,18 +243,18 @@ export default function BookingForm() {
               value={formData.message}
               onChange={handleChange}
               placeholder="Tell us any specific concerns or details..."
-              className="w-full bg-[#FAF9FC] border border-[#E6E2ED] focus:border-[#4A1571] px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors"
+              className="w-full bg-[#FAF9FC] border border-[#E6E2ED] focus:border-[#3B1457] px-4 py-3.5 rounded-xl text-sm text-[#14101A] focus:outline-none transition-colors"
             />
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-4 bg-[#2A0845] hover:bg-[#4A1571] text-white text-xs uppercase tracking-[0.2em] font-medium rounded-full transition-all flex items-center justify-center space-x-2 shadow-md group"
+            className="w-full py-4 bg-[#3B1457] hover:bg-[#4E1A73] text-white text-xs uppercase tracking-[0.2em] font-medium rounded-full transition-all flex items-center justify-center space-x-2 shadow-xs group"
           >
             <span>REQUEST CONSULTATION</span>
-            <div className="w-6 h-6 rounded-full bg-white/15 group-hover:bg-white/25 flex items-center justify-center ml-2 transition-colors">
-              <ArrowRight className="w-3.5 h-3.5 text-[#38BDF8]" />
+            <div className="w-5 h-5 rounded-full bg-white/20 group-hover:bg-white/30 flex items-center justify-center ml-2 transition-colors">
+              <ArrowRight className="w-3 h-3 text-white" />
             </div>
           </button>
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plus, Minus, Sparkles } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { FAQS } from '../data/faqData';
 
 export default function FAQAccordion({ items = FAQS, limit }) {
@@ -17,12 +17,9 @@ export default function FAQAccordion({ items = FAQS, limit }) {
         
         {/* Header */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF]">
-            <Sparkles className="w-3 h-3 text-[#4A1571]" />
-            <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
-              CLEAR ANSWERS
-            </span>
-          </div>
+          <span className="text-[10px] uppercase tracking-[0.28em] text-[#3B1457] font-semibold block">
+            CLEAR ANSWERS
+          </span>
           <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14101A] font-normal leading-tight">
             Frequently Asked Questions
           </h2>
@@ -42,7 +39,7 @@ export default function FAQAccordion({ items = FAQS, limit }) {
                   className="w-full flex items-center justify-between text-left focus:outline-none group cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-serif-luxury text-xl sm:text-2xl text-[#14101A] group-hover:text-[#4A1571] transition-colors pr-6 leading-snug">
+                  <span className="font-serif-luxury text-xl sm:text-2xl text-[#14101A] group-hover:text-[#3B1457] transition-colors pr-6 leading-snug">
                     <span className="font-mono text-sm text-[#0284C7] font-semibold mr-3">
                       {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}.
                     </span>
@@ -50,8 +47,8 @@ export default function FAQAccordion({ items = FAQS, limit }) {
                   </span>
                   <div className={`w-9 h-9 rounded-full border transition-all duration-300 flex items-center justify-center shrink-0 ${
                     isOpen
-                      ? "border-[#4A1571] bg-[#4A1571] text-white"
-                      : "border-[#E6E2ED] bg-[#FAF9FC] group-hover:border-[#4A1571] text-[#14101A]"
+                      ? "border-[#3B1457] bg-[#3B1457] text-white"
+                      : "border-[#E6E2ED] bg-[#FAF9FC] group-hover:border-[#3B1457] text-[#14101A]"
                   }`}>
                     {isOpen ? <Minus className="w-4 h-4 text-white" /> : <Plus className="w-4 h-4" />}
                   </div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Navigation, Clock, ArrowUpRight, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Navigation, Clock, ArrowUpRight } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 
 export default function LocationSection() {
@@ -10,13 +10,10 @@ export default function LocationSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E6E2ED] pb-8">
           <div>
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF] mb-3">
-              <Sparkles className="w-3 h-3 text-[#4A1571]" />
-              <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
-                COIMBATORE CLINIC
-              </span>
-            </div>
-            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14101A] font-normal mt-1">
+            <span className="text-[10px] uppercase tracking-[0.28em] text-[#3B1457] font-semibold block mb-2">
+              COIMBATORE CLINIC
+            </span>
+            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14101A] font-normal leading-tight">
               Find Evara.
             </h2>
           </div>
@@ -26,10 +23,10 @@ export default function LocationSection() {
         </div>
 
         {/* Location Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Left Column: Address, Phone, Action Buttons */}
-          <div className="lg:col-span-5 bg-white border border-[#E6E2ED] rounded-3xl p-8 sm:p-10 flex flex-col justify-between space-y-8 shadow-sm">
+          <div className="lg:col-span-5 bg-white border border-[#E6E2ED] rounded-2xl p-8 sm:p-10 flex flex-col justify-between space-y-8 shadow-xs">
             <div className="space-y-6">
               
               <div className="space-y-2.5">
@@ -51,12 +48,12 @@ export default function LocationSection() {
                   DIRECT CONTACT
                 </span>
                 <div className="flex items-center space-x-3.5 text-[#14101A]">
-                  <div className="w-8 h-8 rounded-full bg-[#FAF5FF] flex items-center justify-center shrink-0 text-[#4A1571]">
+                  <div className="w-8 h-8 rounded-full bg-[#FAF5FF] flex items-center justify-center shrink-0 text-[#3B1457]">
                     <Phone className="w-4 h-4" />
                   </div>
                   <a
                     href={CLINIC_INFO.phoneCallUrl}
-                    className="font-serif-luxury text-2xl font-normal hover:text-[#4A1571] transition-colors"
+                    className="font-serif-luxury text-2xl font-normal hover:text-[#3B1457] transition-colors"
                   >
                     {CLINIC_INFO.phoneDisplay}
                   </a>
@@ -68,7 +65,7 @@ export default function LocationSection() {
                   CONSULTATION HOURS
                 </span>
                 <div className="flex items-center space-x-3 text-[#5B5566] text-xs sm:text-sm">
-                  <Clock className="w-4 h-4 text-[#4A1571] shrink-0" />
+                  <Clock className="w-4 h-4 text-[#3B1457] shrink-0" />
                   <span>Mon – Sat: Consultation by appointment</span>
                 </div>
               </div>
@@ -80,7 +77,7 @@ export default function LocationSection() {
               <div className="grid grid-cols-2 gap-3.5">
                 <a
                   href={CLINIC_INFO.phoneCallUrl}
-                  className="py-3.5 bg-[#FAF9FC] border border-[#E6E2ED] text-[#14101A] text-center text-xs uppercase tracking-[0.18em] font-semibold hover:border-[#4A1571] hover:text-[#4A1571] transition-colors rounded-full flex items-center justify-center"
+                  className="py-3.5 bg-[#FAF9FC] border border-[#E6E2ED] text-[#14101A] text-center text-xs uppercase tracking-[0.18em] font-semibold hover:border-[#3B1457] hover:text-[#3B1457] transition-colors rounded-full flex items-center justify-center"
                 >
                   <Phone className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
                   <span>CALL</span>
@@ -89,7 +86,7 @@ export default function LocationSection() {
                   href={CLINIC_INFO.googleMapsDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3.5 bg-[#FAF9FC] border border-[#E6E2ED] text-[#14101A] text-center text-xs uppercase tracking-[0.18em] font-semibold hover:border-[#4A1571] hover:text-[#4A1571] transition-all rounded-full flex items-center justify-center"
+                  className="py-3.5 bg-[#FAF9FC] border border-[#E6E2ED] text-[#14101A] text-center text-xs uppercase tracking-[0.18em] font-semibold hover:border-[#3B1457] hover:text-[#3B1457] transition-all rounded-full flex items-center justify-center"
                 >
                   <Navigation className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
                   <span>DIRECTIONS</span>
@@ -98,22 +95,22 @@ export default function LocationSection() {
 
               <Link
                 to="/book-consultation"
-                className="w-full py-4 bg-[#2A0845] hover:bg-[#4A1571] text-white text-center text-xs uppercase tracking-[0.2em] font-medium block transition-colors rounded-full flex items-center justify-center shadow-md group"
+                className="w-full py-4 bg-[#3B1457] hover:bg-[#4E1A73] text-white text-center text-xs uppercase tracking-[0.2em] font-medium block transition-colors rounded-full flex items-center justify-center shadow-xs group"
               >
                 <span>BOOK CONSULTATION</span>
                 <div className="w-5 h-5 rounded-full bg-white/15 group-hover:bg-white/25 flex items-center justify-center ml-2 transition-colors">
-                  <ArrowUpRight className="w-3 h-3 text-[#38BDF8]" />
+                  <ArrowUpRight className="w-3 h-3 text-white" />
                 </div>
               </Link>
             </div>
           </div>
 
           {/* Right Column: Embedded Google Maps */}
-          <div className="lg:col-span-7 bg-white border border-[#E6E2ED] rounded-3xl min-h-[420px] overflow-hidden relative shadow-sm">
+          <div className="lg:col-span-7 bg-white border border-[#E6E2ED] rounded-2xl min-h-[420px] overflow-hidden relative shadow-xs">
             <iframe
               title="Evara Aesthetics Coimbatore Location Map"
               src={CLINIC_INFO.googleMapsEmbedUrl}
-              className="w-full h-full min-h-[440px] border-0 opacity-95"
+              className="w-full h-full min-h-[440px] border-0"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

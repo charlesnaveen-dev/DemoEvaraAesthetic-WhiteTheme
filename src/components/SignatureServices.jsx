@@ -1,29 +1,26 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { SERVICES } from '../data/servicesData';
 
 export default function SignatureServices() {
   const [activeService, setActiveService] = useState(SERVICES[0]);
 
   return (
-    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#150C24] border-t border-[#2C1D47] text-[#FAF9FC]">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F9F9F8] border-b border-[#E8E6EB]">
       <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2C1D47] pb-8">
-          <div>
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#2A1647] border border-[#442770] mb-3">
-              <Sparkles className="w-3 h-3 text-[#38BDF8]" />
-              <span className="text-[10px] uppercase tracking-[0.28em] text-[#E0F2FE] font-semibold">
-                EDITORIAL DIRECTORY
-              </span>
-            </div>
-            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#FAF9FC] font-normal mt-1">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E8E6EB] pb-8">
+          <div className="space-y-2">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-[#84808C] font-medium">
+              EDITORIAL DIRECTORY
+            </p>
+            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#121016] font-normal leading-tight">
               Explore our care.
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-[#B8B2C4] max-w-sm font-light leading-relaxed">
+          <p className="text-sm sm:text-base text-[#55525B] max-w-sm font-light leading-relaxed">
             An overview of clinical treatments across Dental, Skin, and Hair care tailored to individual patient consultations.
           </p>
         </div>
@@ -32,7 +29,7 @@ export default function SignatureServices() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
           {/* Left Column: Interactive List Rows */}
-          <div className="lg:col-span-7 space-y-0 divide-y divide-[#2C1D47]">
+          <div className="lg:col-span-7 divide-y divide-[#E8E6EB]">
             {SERVICES.map((service) => {
               const isHovered = activeService?.id === service.id;
               return (
@@ -40,29 +37,23 @@ export default function SignatureServices() {
                   key={service.id}
                   onMouseEnter={() => setActiveService(service)}
                   onClick={() => setActiveService(service)}
-                  className={`group py-5 sm:py-6 px-4 sm:px-6 cursor-pointer transition-all duration-300 rounded-2xl ${
+                  className={`group py-4 sm:py-5 px-3 sm:px-4 cursor-pointer transition-colors duration-200 rounded-lg ${
                     isHovered
-                      ? "bg-[#21133B] border-l-4 border-l-[#38BDF8]"
-                      : "bg-transparent border-l-4 border-l-transparent hover:bg-[#1A0E2E]"
+                      ? "bg-white text-[#121016]"
+                      : "bg-transparent text-[#55525B] hover:text-[#121016]"
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-5 sm:space-x-7">
-                      <span className={`font-mono text-xs sm:text-sm font-semibold ${isHovered ? "text-[#38BDF8]" : "text-[#797285]"}`}>
+                      <span className={`font-mono text-xs sm:text-sm ${isHovered ? "text-[#3B1457] font-semibold" : "text-[#84808C]"}`}>
                         {service.num}
                       </span>
-                      <div className="space-y-1">
-                        <span className={`text-[9px] uppercase tracking-[0.25em] font-medium px-2 py-0.5 rounded-full ${
-                          service.category === 'dental'
-                            ? "bg-[#38BDF8]/15 text-[#38BDF8]"
-                            : service.category === 'skin'
-                            ? "bg-[#C084FC]/15 text-[#D8B4FE]"
-                            : "bg-[#818CF8]/15 text-[#A5B4FC]"
-                        }`}>
+                      <div className="space-y-0.5">
+                        <span className="text-[9px] uppercase tracking-[0.2em] text-[#84808C] font-medium">
                           {service.category}
                         </span>
                         <h3 className={`font-serif-luxury text-xl sm:text-2xl transition-colors ${
-                          isHovered ? "text-[#FAF9FC] font-medium" : "text-[#FAF9FC]/75 group-hover:text-[#FAF9FC]"
+                          isHovered ? "text-[#121016] font-medium" : "text-[#121016]/80 group-hover:text-[#121016]"
                         }`}>
                           {service.name}
                         </h3>
@@ -71,19 +62,17 @@ export default function SignatureServices() {
 
                     <Link
                       to={service.path}
-                      className={`inline-flex items-center space-x-1 text-xs uppercase tracking-widest transition-all ${
-                        isHovered ? "text-[#38BDF8] opacity-100" : "text-[#797285] opacity-60 group-hover:opacity-100"
+                      className={`inline-flex items-center space-x-1 text-xs uppercase tracking-widest transition-opacity ${
+                        isHovered ? "opacity-100 text-[#3B1457]" : "opacity-0 group-hover:opacity-70 text-[#84808C]"
                       }`}
                     >
                       <span className="hidden sm:inline font-medium">EXPLORE</span>
-                      <div className="w-7 h-7 rounded-full bg-white/10 group-hover:bg-[#38BDF8] group-hover:text-[#150C24] flex items-center justify-center transition-colors">
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </div>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
 
                   {/* Mobile Description Expansion */}
-                  <p className="text-xs text-[#B8B2C4] font-light mt-3 sm:hidden leading-relaxed">
+                  <p className="text-xs text-[#55525B] font-light mt-2 sm:hidden leading-relaxed">
                     {service.shortDescription}
                   </p>
                 </div>
@@ -93,13 +82,13 @@ export default function SignatureServices() {
 
           {/* Right Column: Sticky Dynamic Preview Canvas */}
           <div className="hidden lg:block lg:col-span-5 sticky top-32">
-            <div className="bg-[#1D1133] border border-[#2E1E4F] rounded-3xl p-8 space-y-6 overflow-hidden shadow-2xl shadow-black/40">
-              <div className="flex items-center justify-between text-xs text-[#B8B2C4] uppercase tracking-widest border-b border-[#2C1D47] pb-4">
-                <span className="font-medium text-[#FAF9FC]">{activeService?.category} CARE</span>
-                <span className="font-mono text-[#38BDF8] font-semibold">{activeService?.num} / 10</span>
+            <div className="bg-white border border-[#E8E6EB] rounded-2xl p-7 space-y-6 shadow-sm">
+              <div className="flex items-center justify-between text-xs text-[#84808C] uppercase tracking-widest border-b border-[#E8E6EB] pb-3">
+                <span className="font-medium text-[#121016]">{activeService?.category} CARE</span>
+                <span className="font-mono text-[#3B1457] font-semibold">{activeService?.num} / 10</span>
               </div>
 
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-[#150C24] border border-[#2E1E4F]">
+              <div className="aspect-[4/3] rounded-xl overflow-hidden bg-[#F9F9F8] border border-[#E8E6EB]">
                 <img
                   src={activeService.image}
                   alt={activeService.name}
@@ -108,23 +97,23 @@ export default function SignatureServices() {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop";
                   }}
-                  className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 ease-out"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 
-              <div className="space-y-3">
-                <h4 className="font-serif-luxury text-3xl text-[#FAF9FC] font-normal">
+              <div className="space-y-2">
+                <h4 className="font-serif-luxury text-2xl sm:text-3xl text-[#121016] font-normal">
                   {activeService?.name}
                 </h4>
-                <p className="text-xs sm:text-sm text-[#B8B2C4] font-light leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#55525B] font-light leading-relaxed">
                   {activeService?.fullDescription}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#2C1D47]">
+              <div className="pt-2 border-t border-[#E8E6EB]">
                 <Link
                   to={activeService?.path || "/dental"}
-                  className="w-full py-4 bg-[#2A0845] hover:bg-[#4A1571] text-[#FAF9FC] text-center text-xs tracking-[0.2em] font-semibold uppercase block rounded-full transition-colors border border-[#442770] shadow-md"
+                  className="w-full py-3 bg-[#3B1457] hover:bg-[#4F1D75] text-white text-center text-xs tracking-[0.18em] font-medium uppercase block rounded-full transition-colors"
                 >
                   VIEW FULL SERVICE PAGE
                 </Link>

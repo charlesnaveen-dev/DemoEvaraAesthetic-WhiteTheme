@@ -3,7 +3,6 @@ import StructuredData from '../components/StructuredData';
 import FAQAccordion from '../components/FAQAccordion';
 import CTASection from '../components/CTASection';
 import { FAQS } from '../data/faqData';
-import { Sparkles } from 'lucide-react';
 
 export default function FAQPage() {
   return (
@@ -22,13 +21,10 @@ export default function FAQPage() {
       />
 
       <section className="pt-36 sm:pt-40 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FAF9FC] border-b border-[#E6E2ED]">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF]">
-            <Sparkles className="w-3 h-3 text-[#4A1571]" />
-            <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
-              PATIENT INFORMATION
-            </span>
-          </div>
+        <div className="max-w-4xl mx-auto space-y-4">
+          <span className="text-[10px] uppercase tracking-[0.28em] text-[#3B1457] font-semibold block">
+            PATIENT INFORMATION
+          </span>
           <h1 className="font-serif-luxury text-5xl sm:text-7xl text-[#14101A] font-normal leading-tight">
             Frequently Asked Questions.
           </h1>

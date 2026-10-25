@@ -1,5 +1,4 @@
 import useScrollActive from '../hooks/useScrollActive';
-import { Sparkles } from 'lucide-react';
 
 export default function VisualStory() {
   const images = [
@@ -32,13 +31,10 @@ export default function VisualStory() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E6E2ED] pb-8">
           <div>
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF] mb-3">
-              <Sparkles className="w-3 h-3 text-[#4A1571]" />
-              <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
-                THE EVARA AMBIENCE
-              </span>
-            </div>
-            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14101A] font-normal mt-1">
+            <span className="text-[10px] uppercase tracking-[0.28em] text-[#3B1457] font-semibold block mb-2">
+              THE EVARA AMBIENCE
+            </span>
+            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14101A] font-normal leading-tight">
               Every journey is personal.
             </h2>
           </div>
@@ -47,7 +43,7 @@ export default function VisualStory() {
           </p>
         </div>
 
-        {/* Asymmetric Editorial Gallery Grid */}
+        {/* Clean Editorial Gallery Grid with Natural Photography */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {images.map((item, index) => (
             <StoryCard key={index} item={item} index={index} />
@@ -65,21 +61,25 @@ function StoryCard({ item, index }) {
   return (
     <div
       ref={ref}
-      className={`group ${isActive ? 'is-active' : ''} relative bg-white border border-[#E6E2ED] hover:border-[#4A1571]/50 group-[.is-active]:border-[#4A1571]/50 rounded-3xl overflow-hidden aspect-[3/4] flex flex-col justify-end p-6 sm:p-7 shadow-sm hover:shadow-xl hover:shadow-purple-950/5 transition-all duration-500`}
+      className={`group ${isActive ? 'is-active' : ''} bg-white border border-[#E6E2ED] hover:border-[#3B1457]/40 rounded-2xl overflow-hidden flex flex-col shadow-xs hover:shadow-md transition-all duration-300`}
     >
-      <img
-        src={item.url}
-        alt={item.caption}
-        loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover grayscale opacity-75 group-hover:opacity-95 group-[.is-active]:opacity-95 group-hover:scale-105 group-[.is-active]:scale-105 transition-all duration-700 ease-out"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#14101A]/90 via-[#14101A]/35 to-transparent pointer-events-none" />
+      <div className="relative aspect-[4/5] overflow-hidden bg-[#F0EEF5]">
+        <img
+          src={item.url}
+          alt={item.caption}
+          loading="lazy"
+          className="w-full h-full object-cover group-hover:scale-105 group-[.is-active]:scale-105 transition-transform duration-700 ease-out"
+        />
+        <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] uppercase tracking-widest text-[#14101A] font-medium border border-white/40">
+          0{index + 1}
+        </div>
+      </div>
 
-      <div className="relative z-10 space-y-1.5">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-[#38BDF8] font-medium block">
-          0{index + 1} · {item.subtitle}
+      <div className="p-5 sm:p-6 space-y-1.5 bg-white">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-[#0284C7] font-medium block">
+          {item.subtitle}
         </span>
-        <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#FAF9FC] font-normal">
+        <h3 className="font-serif-luxury text-2xl text-[#14101A] font-normal">
           {item.caption}
         </h3>
       </div>
