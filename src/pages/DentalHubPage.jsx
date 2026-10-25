@@ -2,6 +2,7 @@ import SEOHead from '../components/SEOHead';
 import StructuredData from '../components/StructuredData';
 import DentalSection from '../components/DentalSection';
 import CTASection from '../components/CTASection';
+import { Sparkles } from 'lucide-react';
 
 export default function DentalHubPage() {
   return (
@@ -18,15 +19,18 @@ export default function DentalHubPage() {
         ]}
       />
 
-      <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F8F7F3] border-b border-[#E5E3DC]">
+      <section className="pt-36 sm:pt-40 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FAF9FC] border-b border-[#E6E2ED]">
         <div className="max-w-4xl mx-auto space-y-6">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-[#B89B5E] font-semibold">
-            DENTAL DISCIPLINE
-          </span>
-          <h1 className="font-serif-luxury text-5xl sm:text-7xl text-[#111111] font-normal leading-tight">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF]">
+            <Sparkles className="w-3 h-3 text-[#4A1571]" />
+            <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
+              DENTAL DISCIPLINE
+            </span>
+          </div>
+          <h1 className="font-serif-luxury text-5xl sm:text-7xl text-[#14101A] font-normal leading-tight">
             Smile correction & modern oral care.
           </h1>
-          <p className="text-base sm:text-lg text-[#555555] font-light leading-relaxed pt-4">
+          <p className="text-base sm:text-lg text-[#5B5566] font-light leading-relaxed pt-2">
             Confidence begins with your smile. We combine cosmetic refinement, alignment evaluation, and restorative oral care tailored around natural proportion and patient comfort.
           </p>
         </div>

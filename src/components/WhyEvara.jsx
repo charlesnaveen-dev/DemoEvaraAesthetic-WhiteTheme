@@ -1,3 +1,5 @@
+import { Sparkles } from 'lucide-react';
+
 export default function WhyEvara() {
   const points = [
     {
@@ -23,39 +25,45 @@ export default function WhyEvara() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-t border-[#E5E3DC]">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-t border-[#E6E2ED]">
+      <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E5E3DC] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E6E2ED] pb-8">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#B89B5E] font-semibold">
-              OUR DIFFERENCE
-            </span>
-            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#111111] font-normal mt-2">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF] mb-3">
+              <Sparkles className="w-3 h-3 text-[#4A1571]" />
+              <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
+                OUR DIFFERENCE
+              </span>
+            </div>
+            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14101A] font-normal mt-1">
               Why Evara?
             </h2>
           </div>
-          <p className="text-sm text-[#555555] max-w-md font-light">
+          <p className="text-sm sm:text-base text-[#5B5566] max-w-md font-light leading-relaxed">
             Designed around patient trust, thoughtful clinical evaluation, and quiet luxury sophistication.
           </p>
         </div>
 
         {/* 4 Points Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {points.map((pt) => (
             <div
               key={pt.num}
-              className="bg-[#F8F7F3] border border-[#E5E3DC] p-8 space-y-4 hover:border-[#B89B5E]/50 transition-colors group shadow-sm"
+              className="bg-[#FAF9FC] border border-[#E6E2ED] rounded-3xl p-8 sm:p-10 space-y-5 hover:border-[#4A1571]/50 transition-all duration-300 group shadow-sm hover:shadow-lg hover:shadow-purple-950/5"
             >
-              <div className="flex items-center justify-between border-b border-[#E5E3DC] pb-4">
-                <span className="font-mono text-xs text-[#B89B5E] font-semibold">{pt.num}</span>
-                <span className="text-[10px] uppercase tracking-widest text-[#555555]">EVARA PILLAR</span>
+              <div className="flex items-center justify-between border-b border-[#E6E2ED] pb-4">
+                <span className="font-serif-luxury text-2xl text-[#4A1571] font-medium">{pt.num}</span>
+                <span className="text-[10px] uppercase tracking-widest text-[#0284C7] font-semibold flex items-center">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7] mr-1.5" />
+                  EVARA PILLAR
+                </span>
               </div>
-              <h3 className="font-serif-luxury text-2xl text-[#111111] font-normal group-hover:text-[#B89B5E] transition-colors">
+              <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#14101A] font-normal group-hover:text-[#4A1571] transition-colors">
                 {pt.title}
               </h3>
-              <p className="text-xs text-[#555555] font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#5B5566] font-light leading-relaxed">
                 {pt.description}
               </p>
             </div>

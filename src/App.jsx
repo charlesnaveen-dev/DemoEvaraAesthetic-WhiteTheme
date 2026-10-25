@@ -23,7 +23,7 @@ import JournalArticlePage from './pages/JournalArticlePage';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#F8F7F3] text-[#111111] flex flex-col font-sans selection:bg-[#B89B5E] selection:text-white">
+    <div className="min-h-screen bg-[#FAF9FC] text-[#14101A] flex flex-col font-sans selection:bg-[#4A1571] selection:text-white">
       <ScrollToTop />
       <Navbar />
       

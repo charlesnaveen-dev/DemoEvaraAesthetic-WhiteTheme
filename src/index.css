@@ -1,15 +1,36 @@
 @import "tailwindcss";
 
+@theme {
+  --color-purple-brand: #4A1571;
+  --color-purple-deep: #2A0845;
+  --color-purple-noir: #150C24;
+  --color-purple-light: #7E22CE;
+  --color-purple-tint: #F3E8FF;
+  --color-sky-brand: #0284C7;
+  --color-sky-light: #38BDF8;
+  --color-sky-tint: #E0F2FE;
+  --color-surface-pearl: #FAF9FC;
+  --color-surface-card: #FFFFFF;
+  --color-surface-border: #E6E2ED;
+  --color-text-main: #14101A;
+  --color-text-muted: #5B5566;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
 @layer base {
   :root {
-    --bg-primary: #F8F7F3;
+    --bg-primary: #FAF9FC;
     --bg-secondary: #FFFFFF;
-    --text-primary: #111111;
-    --text-muted: #555555;
-    --border-color: #E5E3DC;
-    --accent-gold: #B89B5E;
-    --gold-highlight: #C9A96E;
-    --bg-dark: #111111;
+    --text-primary: #14101A;
+    --text-muted: #5B5566;
+    --border-color: #E6E2ED;
+    --accent-purple: #4A1571;
+    --purple-deep: #2A0845;
+    --purple-light: #7E22CE;
+    --accent-sky: #0284C7;
+    --sky-light: #38BDF8;
+    --bg-dark: #150C24;
   }
 
   body {
@@ -24,17 +45,33 @@
   }
 }
 
-/* Custom Utilities */
-.text-gold {
-  color: #B89B5E;
+/* Custom Utilities for Evara Brand Palette */
+.text-purple-brand {
+  color: #4A1571;
 }
 
-.bg-gold {
-  background-color: #B89B5E;
+.text-purple-deep {
+  color: #2A0845;
+}
+
+.bg-purple-brand {
+  background-color: #4A1571;
+}
+
+.bg-purple-deep {
+  background-color: #2A0845;
+}
+
+.text-sky-brand {
+  color: #0284C7;
+}
+
+.bg-sky-brand {
+  background-color: #0284C7;
 }
 
 .border-thin {
-  border-color: #E5E3DC;
+  border-color: #E6E2ED;
 }
 
 /* Custom Scrollbar */
@@ -43,21 +80,21 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F8F7F3;
+  background: #FAF9FC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D5D3CC;
+  background: #D8D4E2;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B89B5E;
+  background: #4A1571;
 }
 
-/* Grain texture overlay */
+/* Delicate Luxury Grain texture overlay */
 .bg-grain {
-  background-image: radial-gradient(rgba(17, 17, 17, 0.03) 1px, transparent 0);
+  background-image: radial-gradient(rgba(74, 21, 113, 0.025) 1px, transparent 0);
   background-size: 24px 24px;
 }
 

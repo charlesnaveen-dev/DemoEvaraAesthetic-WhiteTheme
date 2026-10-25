@@ -2,6 +2,7 @@ import SEOHead from '../components/SEOHead';
 import StructuredData from '../components/StructuredData';
 import LocationSection from '../components/LocationSection';
 import BookingForm from '../components/BookingForm';
+import { Sparkles } from 'lucide-react';
 
 export default function ContactPage() {
   return (
@@ -18,15 +19,18 @@ export default function ContactPage() {
         ]}
       />
 
-      <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-[#F8F7F3] border-b border-[#E5E3DC]">
+      <section className="pt-36 sm:pt-40 pb-20 px-4 sm:px-6 lg:px-8 bg-[#FAF9FC] border-b border-[#E6E2ED]">
         <div className="max-w-4xl mx-auto space-y-6">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-[#B89B5E] font-semibold">
-            GET IN TOUCH
-          </span>
-          <h1 className="font-serif-luxury text-5xl sm:text-7xl text-[#111111] font-normal leading-tight">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF]">
+            <Sparkles className="w-3 h-3 text-[#4A1571]" />
+            <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
+              GET IN TOUCH
+            </span>
+          </div>
+          <h1 className="font-serif-luxury text-5xl sm:text-7xl text-[#14101A] font-normal leading-tight">
             Reach Evara Aesthetics.
           </h1>
-          <p className="text-base sm:text-lg text-[#555555] font-light leading-relaxed pt-4">
+          <p className="text-base sm:text-lg text-[#5B5566] font-light leading-relaxed pt-2">
             Located in Tatabad, Coimbatore. Connect with our team to ask questions, check appointment availability, or request a consultation.
           </p>
         </div>
@@ -34,7 +38,7 @@ export default function ContactPage() {
 
       <LocationSection />
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-t border-[#E5E3DC]">
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] border-t border-[#E6E2ED]">
         <div className="max-w-4xl mx-auto">
           <BookingForm />
         </div>

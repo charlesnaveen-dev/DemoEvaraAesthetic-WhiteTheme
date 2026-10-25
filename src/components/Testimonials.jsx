@@ -1,36 +1,39 @@
-import { Star, ArrowUpRight } from 'lucide-react';
+import { Star, ArrowUpRight, Sparkles } from 'lucide-react';
 import { GOOGLE_REVIEWS_META, TESTIMONIAL_CARDS } from '../data/testimonialsData';
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#111111] border-t border-[#292929]">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#150C24] border-t border-[#2C1D47] text-[#FAF9FC]">
+      <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#292929] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2C1D47] pb-8">
           <div>
-            <div className="flex items-center space-x-2 text-[#B89B5E] mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-current" />
-              ))}
-              <span className="text-xs text-[#F8F7F3] font-semibold ml-2">5.0 ★</span>
+            <div className="flex items-center space-x-2 mb-3">
+              <div className="flex items-center space-x-1 text-[#F59E0B]">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-current" />
+                ))}
+              </div>
+              <span className="text-xs text-[#FAF9FC] font-semibold ml-2">5.0 ★</span>
+              <span className="text-xs text-[#B8B2C4] font-light">({GOOGLE_REVIEWS_META.totalReviews}+ Reviews)</span>
             </div>
-            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#F8F7F3] font-normal">
+            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#FAF9FC] font-normal leading-tight">
               Client words.
             </h2>
           </div>
-          <div className="space-y-2 text-right md:text-left">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#A4A4A0] block">
+          <div className="space-y-2 text-left md:text-right">
+            <span className="text-[10px] uppercase tracking-[0.25em] text-[#B8B2C4] block font-light">
               VERIFIED GOOGLE REVIEWS
             </span>
             <a
               href={GOOGLE_REVIEWS_META.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-xs uppercase tracking-[0.18em] text-[#F8F7F3] hover:text-[#B89B5E] font-semibold transition-colors"
+              className="inline-flex items-center text-xs uppercase tracking-[0.18em] text-[#38BDF8] hover:text-[#FAF9FC] font-medium transition-colors group"
             >
               <span>VIEW GOOGLE MAPS REVIEWS ({GOOGLE_REVIEWS_META.totalReviews}+)</span>
-              <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
+              <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
         </div>
@@ -40,31 +43,31 @@ export default function Testimonials() {
           {TESTIMONIAL_CARDS.map((item) => (
             <div
               key={item.id}
-              className="bg-[#1A1A1A] border border-[#292929] p-8 space-y-6 flex flex-col justify-between hover:border-[#B89B5E]/50 transition-colors"
+              className="bg-[#1D1133] border border-[#2E1E4F] rounded-3xl p-8 space-y-6 flex flex-col justify-between hover:border-[#7E22CE]/60 transition-all duration-300 shadow-lg shadow-black/20"
             >
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-1 text-[#B89B5E]">
+                  <div className="flex items-center space-x-1 text-[#F59E0B]">
                     {[...Array(item.rating)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-current" />
                     ))}
                   </div>
-                  <span className="text-[10px] uppercase tracking-widest text-[#A4A4A0]">
+                  <span className="text-[10px] uppercase tracking-widest text-[#B8B2C4] font-light">
                     {item.date}
                   </span>
                 </div>
 
-                <p className="font-serif-luxury text-lg italic text-[#F8F7F3] leading-relaxed">
+                <p className="font-serif-luxury text-xl italic text-[#FAF9FC] leading-relaxed">
                   "{item.quote}"
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-[#292929] flex items-center justify-between text-xs">
+              <div className="pt-6 border-t border-[#2E1E4F] flex items-center justify-between text-xs">
                 <div>
-                  <span className="text-[#F8F7F3] font-medium block">{item.author}</span>
-                  <span className="text-[#A4A4A0] text-[11px] font-light">{item.service}</span>
+                  <span className="text-[#FAF9FC] font-medium block">{item.author}</span>
+                  <span className="text-[#B8B2C4] text-[11px] font-light">{item.service}</span>
                 </div>
-                <span className="text-[10px] uppercase tracking-widest text-[#B89B5E] border border-[#292929] px-2.5 py-1">
+                <span className="text-[9px] uppercase tracking-widest text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/30 px-3 py-1 rounded-full font-medium">
                   VERIFIED
                 </span>
               </div>

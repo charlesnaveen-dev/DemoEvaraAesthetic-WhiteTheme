@@ -1,4 +1,5 @@
 import useScrollActive from '../hooks/useScrollActive';
+import { Sparkles } from 'lucide-react';
 
 export default function VisualStory() {
   const images = [
@@ -25,20 +26,23 @@ export default function VisualStory() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8F7F3] border-t border-[#E5E3DC]">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF9FC] border-t border-[#E6E2ED]">
+      <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E5E3DC] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E6E2ED] pb-8">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#B89B5E] font-semibold">
-              THE EVARA AMBIENCE
-            </span>
-            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#111111] font-normal mt-2">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF] mb-3">
+              <Sparkles className="w-3 h-3 text-[#4A1571]" />
+              <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
+                THE EVARA AMBIENCE
+              </span>
+            </div>
+            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14101A] font-normal mt-1">
               Every journey is personal.
             </h2>
           </div>
-          <p className="text-sm text-[#555555] max-w-md font-light">
+          <p className="text-sm sm:text-base text-[#5B5566] max-w-md font-light leading-relaxed">
             Experiencing Evara Aesthetics means experiencing clean clinical design, respectful privacy, and tranquil patient atmosphere.
           </p>
         </div>
@@ -61,20 +65,21 @@ function StoryCard({ item, index }) {
   return (
     <div
       ref={ref}
-      className={`group ${isActive ? 'is-active' : ''} relative bg-[#FFFFFF] border border-[#E5E3DC] overflow-hidden aspect-[3/4] flex flex-col justify-end p-6 shadow-sm`}
+      className={`group ${isActive ? 'is-active' : ''} relative bg-white border border-[#E6E2ED] hover:border-[#4A1571]/50 group-[.is-active]:border-[#4A1571]/50 rounded-3xl overflow-hidden aspect-[3/4] flex flex-col justify-end p-6 sm:p-7 shadow-sm hover:shadow-xl hover:shadow-purple-950/5 transition-all duration-500`}
     >
       <img
         src={item.url}
         alt={item.caption}
-        className="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:opacity-90 group-[.is-active]:opacity-90 group-hover:scale-105 group-[.is-active]:scale-105 transition-all duration-700 ease-out"
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover grayscale opacity-75 group-hover:opacity-95 group-[.is-active]:opacity-95 group-hover:scale-105 group-[.is-active]:scale-105 transition-all duration-700 ease-out"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/90 via-[#111111]/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#14101A]/90 via-[#14101A]/35 to-transparent pointer-events-none" />
 
-      <div className="relative z-10 space-y-1">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-[#B89B5E] font-semibold block">
+      <div className="relative z-10 space-y-1.5">
+        <span className="text-[10px] uppercase tracking-[0.25em] text-[#38BDF8] font-medium block">
           0{index + 1} · {item.subtitle}
         </span>
-        <h3 className="font-serif-luxury text-2xl text-[#F8F7F3] font-normal">
+        <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#FAF9FC] font-normal">
           {item.caption}
         </h3>
       </div>

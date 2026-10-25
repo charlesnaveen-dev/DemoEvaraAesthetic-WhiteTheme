@@ -1,67 +1,74 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Navigation, Clock, ArrowUpRight } from 'lucide-react';
+import { MapPin, Phone, Navigation, Clock, ArrowUpRight, Sparkles } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 
 export default function LocationSection() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8F7F3] border-t border-[#E5E3DC]">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF9FC] border-t border-[#E6E2ED]">
+      <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E5E3DC] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E6E2ED] pb-8">
           <div>
-            <span className="text-[11px] uppercase tracking-[0.3em] text-[#B89B5E] font-semibold">
-              COIMBATORE CLINIC
-            </span>
-            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#111111] font-normal mt-2">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF] mb-3">
+              <Sparkles className="w-3 h-3 text-[#4A1571]" />
+              <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
+                COIMBATORE CLINIC
+              </span>
+            </div>
+            <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14101A] font-normal mt-1">
               Find Evara.
             </h2>
           </div>
-          <p className="text-sm text-[#555555] max-w-md font-light">
+          <p className="text-sm sm:text-base text-[#5B5566] max-w-md font-light leading-relaxed">
             Conveniently situated in Tatabad, Coimbatore. Easily reachable with dedicated parking and modern clinical facilities.
           </p>
         </div>
 
         {/* Location Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
           
           {/* Left Column: Address, Phone, Action Buttons */}
-          <div className="lg:col-span-5 bg-[#FFFFFF] border border-[#E5E3DC] p-8 flex flex-col justify-between space-y-8 shadow-sm">
+          <div className="lg:col-span-5 bg-white border border-[#E6E2ED] rounded-3xl p-8 sm:p-10 flex flex-col justify-between space-y-8 shadow-sm">
             <div className="space-y-6">
               
-              <div className="space-y-2">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-[#B89B5E] font-semibold">
+              <div className="space-y-2.5">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-[#0284C7] font-semibold block">
                   CLINIC ADDRESS
                 </span>
-                <div className="flex items-start space-x-3 text-[#111111]">
-                  <MapPin className="w-5 h-5 text-[#B89B5E] mt-1 shrink-0" />
+                <div className="flex items-start space-x-3.5 text-[#14101A]">
+                  <div className="w-8 h-8 rounded-full bg-[#E0F2FE] flex items-center justify-center shrink-0 mt-0.5 text-[#0284C7]">
+                    <MapPin className="w-4 h-4" />
+                  </div>
                   <p className="font-serif-luxury text-xl sm:text-2xl font-normal leading-snug">
                     {CLINIC_INFO.fullAddress}
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-2 pt-4 border-t border-[#E5E3DC]">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-[#B89B5E] font-semibold">
+              <div className="space-y-2.5 pt-5 border-t border-[#E6E2ED]">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-[#0284C7] font-semibold block">
                   DIRECT CONTACT
                 </span>
-                <div className="flex items-center space-x-3 text-[#111111]">
-                  <Phone className="w-5 h-5 text-[#B89B5E] shrink-0" />
+                <div className="flex items-center space-x-3.5 text-[#14101A]">
+                  <div className="w-8 h-8 rounded-full bg-[#FAF5FF] flex items-center justify-center shrink-0 text-[#4A1571]">
+                    <Phone className="w-4 h-4" />
+                  </div>
                   <a
                     href={CLINIC_INFO.phoneCallUrl}
-                    className="font-serif-luxury text-2xl font-normal hover:text-[#B89B5E] transition-colors"
+                    className="font-serif-luxury text-2xl font-normal hover:text-[#4A1571] transition-colors"
                   >
                     {CLINIC_INFO.phoneDisplay}
                   </a>
                 </div>
               </div>
 
-              <div className="space-y-2 pt-4 border-t border-[#E5E3DC]">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-[#B89B5E] font-semibold">
+              <div className="space-y-2.5 pt-5 border-t border-[#E6E2ED]">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-[#0284C7] font-semibold block">
                   CONSULTATION HOURS
                 </span>
-                <div className="flex items-center space-x-3 text-[#555555] text-xs">
-                  <Clock className="w-4 h-4 text-[#B89B5E] shrink-0" />
+                <div className="flex items-center space-x-3 text-[#5B5566] text-xs sm:text-sm">
+                  <Clock className="w-4 h-4 text-[#4A1571] shrink-0" />
                   <span>Mon – Sat: Consultation by appointment</span>
                 </div>
               </div>
@@ -69,42 +76,44 @@ export default function LocationSection() {
             </div>
 
             {/* Action Buttons Grid */}
-            <div className="space-y-3 pt-6 border-t border-[#E5E3DC]">
-              <div className="grid grid-cols-2 gap-3">
+            <div className="space-y-3.5 pt-6 border-t border-[#E6E2ED]">
+              <div className="grid grid-cols-2 gap-3.5">
                 <a
                   href={CLINIC_INFO.phoneCallUrl}
-                  className="py-3 bg-[#111111] text-white text-center text-xs uppercase tracking-[0.18em] font-semibold hover:bg-[#222222] transition-colors flex items-center justify-center"
+                  className="py-3.5 bg-[#FAF9FC] border border-[#E6E2ED] text-[#14101A] text-center text-xs uppercase tracking-[0.18em] font-semibold hover:border-[#4A1571] hover:text-[#4A1571] transition-colors rounded-full flex items-center justify-center"
                 >
-                  <Phone className="w-3.5 h-3.5 mr-1.5" />
+                  <Phone className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
                   <span>CALL</span>
                 </a>
                 <a
                   href={CLINIC_INFO.googleMapsDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 bg-transparent border border-[#E5E3DC] text-[#111111] text-center text-xs uppercase tracking-[0.18em] font-semibold hover:border-[#111111] transition-all flex items-center justify-center"
+                  className="py-3.5 bg-[#FAF9FC] border border-[#E6E2ED] text-[#14101A] text-center text-xs uppercase tracking-[0.18em] font-semibold hover:border-[#4A1571] hover:text-[#4A1571] transition-all rounded-full flex items-center justify-center"
                 >
-                  <Navigation className="w-3.5 h-3.5 mr-1.5" />
+                  <Navigation className="w-3.5 h-3.5 mr-1.5 text-[#0284C7]" />
                   <span>DIRECTIONS</span>
                 </a>
               </div>
 
               <Link
                 to="/book-consultation"
-                className="w-full py-3.5 bg-[#111111] text-white text-center text-xs uppercase tracking-[0.2em] font-semibold block hover:bg-[#222222] transition-colors flex items-center justify-center"
+                className="w-full py-4 bg-[#2A0845] hover:bg-[#4A1571] text-white text-center text-xs uppercase tracking-[0.2em] font-medium block transition-colors rounded-full flex items-center justify-center shadow-md group"
               >
                 <span>BOOK CONSULTATION</span>
-                <ArrowUpRight className="w-4 h-4 ml-1.5" />
+                <div className="w-5 h-5 rounded-full bg-white/15 group-hover:bg-white/25 flex items-center justify-center ml-2 transition-colors">
+                  <ArrowUpRight className="w-3 h-3 text-[#38BDF8]" />
+                </div>
               </Link>
             </div>
           </div>
 
           {/* Right Column: Embedded Google Maps */}
-          <div className="lg:col-span-7 bg-[#FFFFFF] border border-[#E5E3DC] min-h-[400px] overflow-hidden relative shadow-sm">
+          <div className="lg:col-span-7 bg-white border border-[#E6E2ED] rounded-3xl min-h-[420px] overflow-hidden relative shadow-sm">
             <iframe
               title="Evara Aesthetics Coimbatore Location Map"
               src={CLINIC_INFO.googleMapsEmbedUrl}
-              className="w-full h-full min-h-[420px] border-0 filter grayscale opacity-90 contrast-100"
+              className="w-full h-full min-h-[440px] border-0 opacity-95"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

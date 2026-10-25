@@ -1,3 +1,5 @@
+import { Sparkles, ArrowRight } from 'lucide-react';
+
 export default function OurApproach() {
   const steps = [
     {
@@ -23,18 +25,21 @@ export default function OurApproach() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#F8F7F3] border-t border-[#E5E3DC]">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF9FC] border-t border-[#E6E2ED]">
+      <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-[#B89B5E] font-semibold">
-            THE CONSULTATION JOURNEY
-          </span>
-          <h2 className="font-serif-luxury text-4xl sm:text-6xl text-[#111111] font-normal">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#E9D5FF]">
+            <Sparkles className="w-3 h-3 text-[#4A1571]" />
+            <span className="text-[10px] uppercase tracking-[0.28em] text-[#4A1571] font-semibold">
+              THE CONSULTATION JOURNEY
+            </span>
+          </div>
+          <h2 className="font-serif-luxury text-4xl sm:text-5xl lg:text-6xl text-[#14101A] font-normal leading-tight">
             Our Approach
           </h2>
-          <p className="text-sm text-[#555555] font-light">
+          <p className="text-sm sm:text-base text-[#5B5566] font-light max-w-xl mx-auto leading-relaxed">
             A structured, step-by-step process centered on communication, comfort, and informed choice.
           </p>
         </div>
@@ -44,29 +49,30 @@ export default function OurApproach() {
           {steps.map((item, index) => (
             <div
               key={item.step}
-              className="bg-[#FFFFFF] border border-[#E5E3DC] p-8 space-y-6 flex flex-col justify-between hover:border-[#B89B5E]/50 transition-all duration-300 relative group shadow-sm"
+              className="bg-white border border-[#E6E2ED] rounded-3xl p-7 sm:p-8 space-y-6 flex flex-col justify-between hover:border-[#4A1571]/50 transition-all duration-300 relative group shadow-sm hover:shadow-xl hover:shadow-purple-950/5"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-[#E5E3DC] pb-3">
-                  <span className="text-xs uppercase tracking-[0.2em] text-[#B89B5E] font-semibold">
+                <div className="flex items-center justify-between border-b border-[#E6E2ED] pb-3.5">
+                  <span className="text-xs uppercase tracking-[0.2em] text-[#4A1571] font-semibold">
                     {item.step}
                   </span>
-                  <span className="text-xs font-mono text-[#555555]">
+                  <span className="font-serif-luxury text-2xl text-[#797285] font-light">
                     0{index + 1}
                   </span>
                 </div>
 
-                <h3 className="font-serif-luxury text-3xl text-[#111111] font-normal group-hover:text-[#B89B5E] transition-colors">
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl text-[#14101A] font-normal group-hover:text-[#4A1571] transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="text-xs text-[#555555] font-light leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#5B5566] font-light leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
-              <div className="pt-4 flex items-center space-x-2 text-[10px] uppercase tracking-widest text-[#555555] group-hover:text-[#111111] transition-colors">
-                <span>STRICT CLINICAL PROTOCOL</span>
+              <div className="pt-4 border-t border-[#E6E2ED] flex items-center justify-between text-[10px] uppercase tracking-widest text-[#797285] group-hover:text-[#0284C7] transition-colors font-medium">
+                <span>CLINICAL PROTOCOL</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#0284C7]" />
               </div>
             </div>
           ))}
